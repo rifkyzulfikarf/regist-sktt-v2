@@ -1,0 +1,244 @@
+INFO - 2024-07-24 12:21:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-24 12:21:13 --> ErrorException: Undefined variable $recaptcha
+in APPPATH\Views\home_donor.php on line 188.
+ 1 APPPATH\Views\home_donor.php(188): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $recaptcha', 'C:\\wamp\\www\\papsmear\\app\\Views\\home_donor.php', 188)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\wamp\\www\\papsmear\\app\\Views\\home_donor.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('home_donor', [], true)
+ 5 APPPATH\Controllers\DonorController.php(44): view('home_donor', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-24 12:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:23:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:04:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:10:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:18:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:19:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:21:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:41:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:42:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:42:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 13:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-24 13:48:06 --> mysqli_sql_exception: Column 'id' in field list is ambiguous in C:\wamp\www\papsmear\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp\www\papsmear\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `n...', 0)
+#1 C:\wamp\www\papsmear\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `n...')
+#2 C:\wamp\www\papsmear\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `n...')
+#3 C:\wamp\www\papsmear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `n...', Array, false)
+#4 C:\wamp\www\papsmear\app\Models\Pesertadonor.php(49): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp\www\papsmear\app\Controllers\DonorController.php(194): App\Models\Pesertadonor->getDatabyNIK('35780602091992')
+#6 C:\wamp\www\papsmear\system\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+#7 C:\wamp\www\papsmear\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+#8 C:\wamp\www\papsmear\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp\www\papsmear\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-07-24 13:48:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = :donor_peserta.nik:', [...], false)
+ 2 APPPATH\Models\Pesertadonor.php(49): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\DonorController.php(194): App\Models\Pesertadonor->getDatabyNIK('35780602091992')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-24 13:48:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = \'35780602091992\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = \'35780602091992\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = :donor_peserta.nik:', [...], false)
+ 4 APPPATH\Models\Pesertadonor.php(49): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\DonorController.php(194): App\Models\Pesertadonor->getDatabyNIK('35780602091992')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-24 13:48:06 --> [Caused by] mysqli_sql_exception: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = \'35780602091992\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = \'35780602091992\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = \'35780602091992\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = :donor_peserta.nik:', [...], false)
+ 5 APPPATH\Models\Pesertadonor.php(49): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\DonorController.php(194): App\Models\Pesertadonor->getDatabyNIK('35780602091992')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-24 13:48:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-24 13:48:38 --> mysqli_sql_exception: Column 'id' in field list is ambiguous in C:\wamp\www\papsmear\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp\www\papsmear\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `n...', 0)
+#1 C:\wamp\www\papsmear\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `n...')
+#2 C:\wamp\www\papsmear\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `n...')
+#3 C:\wamp\www\papsmear\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `n...', Array, false)
+#4 C:\wamp\www\papsmear\app\Models\Pesertadonor.php(49): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp\www\papsmear\app\Controllers\DonorController.php(194): App\Models\Pesertadonor->getDatabyNIK('357806020992000...')
+#6 C:\wamp\www\papsmear\system\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+#7 C:\wamp\www\papsmear\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+#8 C:\wamp\www\papsmear\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp\www\papsmear\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-07-24 13:48:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = :donor_peserta.nik:', [...], false)
+ 2 APPPATH\Models\Pesertadonor.php(49): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\DonorController.php(194): App\Models\Pesertadonor->getDatabyNIK('3578060209920002')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-24 13:48:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = \'3578060209920002\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = \'3578060209920002\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = :donor_peserta.nik:', [...], false)
+ 4 APPPATH\Models\Pesertadonor.php(49): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\DonorController.php(194): App\Models\Pesertadonor->getDatabyNIK('3578060209920002')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-24 13:48:38 --> [Caused by] mysqli_sql_exception: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = \'3578060209920002\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = \'3578060209920002\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = \'3578060209920002\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `nama`, `nik`, `alamat`, `tgl_lahir`, `telp`, `jadwal_id`, `nip`, `kodesatker`, `unitkerja`, `tgl_daftar`
+FROM `donor_peserta`
+JOIN `donor_jadwal` ON `donor_peserta`.`jadwal_id` = `donor_jadwal`.`id`
+WHERE `donor_peserta`.`nik` = :donor_peserta.nik:', [...], false)
+ 5 APPPATH\Models\Pesertadonor.php(49): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\DonorController.php(194): App\Models\Pesertadonor->getDatabyNIK('3578060209920002')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-24 13:50:25 --> ErrorException: Undefined property: stdClass::$hari
+in APPPATH\Views\data_registrasi_donor.php on line 17.
+ 1 APPPATH\Views\data_registrasi_donor.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$hari', 'C:\\wamp\\www\\papsmear\\app\\Views\\data_registrasi_donor.php', 17)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\wamp\\www\\papsmear\\app\\Views\\data_registrasi_donor.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('data_registrasi_donor', [], true)
+ 5 APPPATH\Controllers\DonorController.php(196): view('data_registrasi_donor', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-24 13:50:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-24 13:51:06 --> ErrorException: Undefined property: stdClass::$urut
+in APPPATH\Views\data_registrasi_donor.php on line 17.
+ 1 APPPATH\Views\data_registrasi_donor.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$urut', 'C:\\wamp\\www\\papsmear\\app\\Views\\data_registrasi_donor.php', 17)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\wamp\\www\\papsmear\\app\\Views\\data_registrasi_donor.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('data_registrasi_donor', [], true)
+ 5 APPPATH\Controllers\DonorController.php(196): view('data_registrasi_donor', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-24 13:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-24 13:52:37 --> ErrorException: Undefined property: stdClass::$lokasi
+in APPPATH\Views\data_registrasi_donor.php on line 17.
+ 1 APPPATH\Views\data_registrasi_donor.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$lokasi', 'C:\\wamp\\www\\papsmear\\app\\Views\\data_registrasi_donor.php', 17)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\wamp\\www\\papsmear\\app\\Views\\data_registrasi_donor.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('data_registrasi_donor', [], true)
+ 5 APPPATH\Controllers\DonorController.php(196): view('data_registrasi_donor', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->getDataRegistrasi()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-24 14:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-24 16:01:51 --> ErrorException: Undefined property: stdClass::$urut
+in APPPATH\Views\cetak_bukti_donor.php on line 47.
+ 1 APPPATH\Views\cetak_bukti_donor.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$urut', 'C:\\wamp\\www\\papsmear\\app\\Views\\cetak_bukti_donor.php', 47)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\wamp\\www\\papsmear\\app\\Views\\cetak_bukti_donor.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('cetak_bukti_donor', [], true)
+ 5 APPPATH\Controllers\DonorController.php(215): view('cetak_bukti_donor', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->printBukti()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-24 16:02:26 --> ErrorException: Undefined property: stdClass::$lokasi
+in APPPATH\Views\cetak_bukti_donor.php on line 48.
+ 1 APPPATH\Views\cetak_bukti_donor.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$lokasi', 'C:\\wamp\\www\\papsmear\\app\\Views\\cetak_bukti_donor.php', 48)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\wamp\\www\\papsmear\\app\\Views\\cetak_bukti_donor.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('cetak_bukti_donor', [], true)
+ 5 APPPATH\Controllers\DonorController.php(215): view('cetak_bukti_donor', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\DonorController->printBukti()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DonorController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-24 16:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 16:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 16:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 16:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

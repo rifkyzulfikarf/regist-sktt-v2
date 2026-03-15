@@ -1,0 +1,9 @@
+{
+    "require": {
+        "endroid/qr-code": "^6.0",
+        "setasign/fpdf": "^1.8.2",
+        "picqer/php-barcode-generator": "^3.2",
+        "dompdf/dompdf": "^3.1",
+        "phpoffice/phpspreadsheet": "2.1"
+    }
+}

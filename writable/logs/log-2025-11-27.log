@@ -1,0 +1,651 @@
+WARNING - 2025-11-27 08:24:04 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 08:24:04 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 08:24:04 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 08:24:04 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 08:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 08:59:38 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 08:59:38 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 08:59:38 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 08:59:38 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 08:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-27 08:59:38 --> ErrorException: Undefined variable $activeMenu
+in APPPATH\Views\admin\sidebar.php on line 7.
+ 1 APPPATH\Views\admin\sidebar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $activeMenu', 'C:\\wamp64\\www\\drawing-ham\\app\\Views\\admin\\sidebar.php', 7)
+ 2 APPPATH\Views\admin\header.php(14): include('C:\\wamp64\\www\\drawing-ham\\app\\Views\\admin\\sidebar.php')
+ 3 APPPATH\Views\admin\listpeserta.php(4): include('C:\\wamp64\\www\\drawing-ham\\app\\Views\\admin\\header.php')
+ 4 SYSTEMPATH\View\View.php(228): include('C:\\wamp64\\www\\drawing-ham\\app\\Views\\admin\\listpeserta.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/listpeserta', [], true)
+ 7 APPPATH\Controllers\RegistController.php(267): view('admin/listpeserta', [])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\RegistController->listPeserta()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:00:06 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:00:06 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:00:06 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:00:06 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-27 09:00:06 --> ErrorException: Undefined variable $activeMenu
+in APPPATH\Views\admin\sidebar.php on line 12.
+ 1 APPPATH\Views\admin\sidebar.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $activeMenu', 'C:\\wamp64\\www\\drawing-ham\\app\\Views\\admin\\sidebar.php', 12)
+ 2 APPPATH\Views\admin\header.php(14): include('C:\\wamp64\\www\\drawing-ham\\app\\Views\\admin\\sidebar.php')
+ 3 APPPATH\Views\admin\listpeserta.php(4): include('C:\\wamp64\\www\\drawing-ham\\app\\Views\\admin\\header.php')
+ 4 SYSTEMPATH\View\View.php(228): include('C:\\wamp64\\www\\drawing-ham\\app\\Views\\admin\\listpeserta.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/listpeserta', [], true)
+ 7 APPPATH\Controllers\RegistController.php(267): view('admin/listpeserta', [])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\RegistController->listPeserta()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:00:30 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:00:30 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:00:30 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:00:30 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:01:09 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:01:09 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:01:09 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:01:09 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:01:37 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:01:37 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:01:37 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:01:37 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:02:48 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:02:48 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:02:48 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:02:48 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:06:11 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:06:11 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:06:11 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:06:11 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:06:56 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:06:56 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:06:56 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:06:56 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:06:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:07:17 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:07:17 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:07:17 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:07:17 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:07:46 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:07:46 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:07:46 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:07:46 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:08:07 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:08:07 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:08:07 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:08:07 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:08:29 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:08:29 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:08:29 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:08:29 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:14:16 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:14:16 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:14:16 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:14:16 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:14:44 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:14:44 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:14:44 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:14:44 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:14:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:15:08 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:15:08 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:15:08 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:15:08 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:15:41 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:15:41 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:15:41 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:15:41 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:15:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:18:16 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:18:16 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:18:16 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:18:16 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:18:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:18:40 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:18:40 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:18:40 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:18:40 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:18:46 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:18:46 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:18:46 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:18:46 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:18:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:19:00 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:19:00 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:19:00 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:19:00 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:20:21 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:20:21 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:20:21 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:20:21 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:20:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:20:34 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:20:34 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:20:34 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:20:34 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:21:05 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:21:05 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:21:05 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:21:05 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-27 09:21:40 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$settings is deprecated in APPPATH\Libraries\Recaptcha.php on line 29.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:21:40 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_siteKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 31.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:21:40 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_secretKey is deprecated in APPPATH\Libraries\Recaptcha.php on line 32.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2025-11-27 09:21:40 --> [DEPRECATED] Creation of dynamic property App\Libraries\Recaptcha::$_language is deprecated in APPPATH\Libraries\Recaptcha.php on line 33.
+ 1 APPPATH\Controllers\RegistController.php(27): App\Libraries\Recaptcha->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(913): App\Controllers\RegistController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-11-27 09:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
