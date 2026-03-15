@@ -37,9 +37,8 @@
         .notes ol { margin: 0 0 0 14px; padding: 0; }
         .notes li { margin-bottom: 2px; }
 
-        .sign { padding: 6px 8px; text-align: center; }
-        .sign-title { font-size: 15px; margin-bottom: 44px; }
-        .sign-line { border-top: 1px solid #222; width: 78%; margin: 0 auto; }
+        .sign { padding: 6px 8px; text-align: center; min-height: 88px; display: flex; flex-direction: column; }
+        .sign-title { font-size: 15px; margin-bottom: auto; }
 
         .pin-row { width: 100%; border-top: 2px solid #222; }
         .pin-box { padding: 8px; font-size: 26px; font-weight: 700; letter-spacing: 1px; }
@@ -174,14 +173,13 @@
                     <ol>
                         <li>Kartu ini wajib dibawa saat pelaksanaan Seleksi Kompetensi Tambahan (Tes Tertulis).</li>
                         <li>Peserta wajib menunjukkan kartu dan identitas resmi saat registrasi kehadiran.</li>
-                        <li>Barcode pada kartu digunakan untuk scan kehadiran oleh panitia unit kerja penyelenggara.</li>
+                        <li>Cetak Kartu Peserta dengan kualitas tinggi karena barcode pada Kartu Ujian digunakan untuk scan kehadiran oleh panitia.</li>
                     </ol>
                 </div>
             </td>
             <td style="width:40%;">
                 <div class="sign">
                     <div class="sign-title">Tanda Tangan Peserta</div>
-                    <div class="sign-line"></div>
                 </div>
             </td>
         </tr>

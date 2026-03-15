@@ -1,0 +1,23 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Logs / Debug
+*.log
+writable/logs/*
+!writable/logs/index.html
+writable/debugbar/*
+!writable/debugbar/.gitkeep
+
+# Cache / Session / Temp
+writable/cache/*
+!writable/cache/index.html
+writable/session/*
+!writable/session/index.html
+
+# Build artifacts
+*.zip

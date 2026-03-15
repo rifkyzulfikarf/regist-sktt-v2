@@ -82,7 +82,7 @@ class RegistController extends BaseController
 
         $dompdf = new Dompdf($options);
         $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
 
         $safeNumber = preg_replace('/[^A-Za-z0-9_-]/', '_', $participant['participant_number']);
