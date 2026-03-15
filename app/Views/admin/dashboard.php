@@ -15,7 +15,11 @@
             <div class="kh-brand-title">Dashboard Admin SKTT</div>
         </div>
         <div class="d-flex gap-2">
-            <a class="btn btn-outline-light btn-sm" href="<?= base_url('admin/import') ?>">Import Peserta</a>
+            <?php if ($isSuperAdmin): ?>
+                <a class="btn btn-outline-light btn-sm" href="<?= base_url('admin/import') ?>">Import Peserta</a>
+                <a class="btn btn-outline-light btn-sm" href="<?= base_url('admin/logs/login') ?>">Log Login</a>
+                <a class="btn btn-outline-light btn-sm" href="<?= base_url('admin/logs/scan') ?>">Log Scan</a>
+            <?php endif; ?>
             <a class="btn btn-outline-light btn-sm" href="<?= base_url('admin/scan') ?>">Scan Kehadiran</a>
             <a class="btn btn-outline-light btn-sm" href="<?= base_url('admin/report') ?>">Laporan</a>
             <a class="btn btn-danger btn-sm" href="<?= base_url('admin/logout') ?>">Logout</a>
@@ -23,6 +27,19 @@
     </div>
 </nav>
 <div class="container py-4">
+    <?php if (session()->getFlashdata('error')): ?>
+        <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+    <?php endif; ?>
+
+    <div class="mb-3">
+        <?php if ($isSuperAdmin): ?>
+            <span class="badge text-bg-primary">Super Admin</span>
+        <?php else: ?>
+            <span class="badge text-bg-secondary">Admin Unit Kerja</span>
+            <span class="badge text-bg-light border">Unit: <?= esc($adminWorkUnit ?: '-') ?></span>
+        <?php endif; ?>
+    </div>
+
     <h4 class="mb-4 kh-accent">Ringkasan Kehadiran</h4>
     <div class="row g-3">
         <div class="col-md-4"><div class="card kh-card"><div class="card-body"><div class="text-muted">Total Peserta</div><div class="display-6"><?= esc((string) $totalParticipants) ?></div></div></div></div>

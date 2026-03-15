@@ -10,7 +10,7 @@ class AdminModel extends Model
     protected $primaryKey    = 'id';
     protected $returnType    = 'array';
     protected $useTimestamps = true;
-    protected $allowedFields = ['username', 'password_hash', 'work_unit'];
+    protected $allowedFields = ['username', 'password_hash', 'role', 'work_unit'];
 
     public function verifyLogin(string $username, string $password): ?array
     {

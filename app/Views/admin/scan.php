@@ -23,6 +23,10 @@
 </nav>
 
 <div class="container py-4">
+    <?php if (! $isSuperAdmin): ?>
+        <div class="alert alert-info">Mode Admin Unit Kerja aktif. Anda hanya dapat scan peserta dari unit kerja: <strong><?= esc($adminWorkUnit ?: '-') ?></strong>.</div>
+    <?php endif; ?>
+
     <div class="row g-4">
         <div class="col-lg-6">
             <div class="card kh-card">

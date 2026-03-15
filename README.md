@@ -39,5 +39,17 @@ Sudah dipasang di `composer.json`:
 ## Akun Admin Default
 - Username: `admin`
 - Password: `Admin123!`
+- Role: `super_admin`
 
 Segera ganti password admin di tabel `admins` setelah login pertama.
+
+## Role Admin
+- `super_admin`: dapat melihat, scan barcode, import data, dan generate laporan seluruh peserta.
+- `admin_unit`: dapat melihat, scan barcode, dan generate laporan hanya untuk peserta pada `work_unit` yang sama dengan akun admin.
+
+## Log Aktivitas Admin Unit Kerja
+- Login `admin_unit` dicatat ke tabel `admin_login_logs`.
+- Aktivitas scan barcode `admin_unit` dicatat ke tabel `attendance_scan_events`.
+- Halaman log hanya dapat diakses oleh `super_admin`:
+  - `/admin/logs/login`
+  - `/admin/logs/scan`

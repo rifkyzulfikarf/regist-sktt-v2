@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Libraries\BarcodeCrypto;
 use App\Models\AdminModel;
+use App\Models\AdminLoginLogModel;
 use App\Models\AttendanceLogModel;
 use App\Models\AttendanceScanEventModel;
 use App\Models\ParticipantModel;
@@ -14,10 +14,35 @@ use PhpOffice\PhpSpreadsheet\Shared\Date as ExcelDate;
 
 class AdminController extends BaseController
 {
+    private function isSuperAdmin(): bool
+    {
+        return session()->get('admin_role') === 'super_admin';
+    }
+
+    private function getScopedWorkUnit(): ?string
+    {
+        if ($this->isSuperAdmin()) {
+            return null;
+        }
+
+        $workUnit = trim((string) session()->get('admin_work_unit'));
+
+        return $workUnit !== '' ? $workUnit : null;
+    }
+
     private function requireAdminLogin()
     {
         if (! session()->get('admin_logged_in')) {
             return redirect()->to(base_url('admin/login'));
+        }
+
+        return null;
+    }
+
+    private function requireSuperAdmin()
+    {
+        if (! $this->isSuperAdmin()) {
+            return redirect()->to(base_url('admin/dashboard'))->with('error', 'Akses ditolak. Fitur ini hanya untuk Super Admin.');
         }
 
         return null;
@@ -53,8 +78,13 @@ class AdminController extends BaseController
                 'admin_logged_in' => true,
                 'admin_id'        => $admin['id'],
                 'admin_username'  => $admin['username'],
+                'admin_role'      => $admin['role'] ?? 'admin_unit',
                 'admin_work_unit' => $admin['work_unit'],
             ]);
+
+            if (($admin['role'] ?? 'admin_unit') === 'admin_unit') {
+                $this->writeAdminUnitLoginLog($admin['id'], 'success', 'Login berhasil');
+            }
 
             return redirect()->to(base_url('admin/dashboard'));
         }
@@ -64,7 +94,7 @@ class AdminController extends BaseController
 
     public function logout()
     {
-        session()->remove(['admin_logged_in', 'admin_id', 'admin_username', 'admin_work_unit']);
+        session()->remove(['admin_logged_in', 'admin_id', 'admin_username', 'admin_role', 'admin_work_unit']);
 
         return redirect()->to(base_url('admin/login'));
     }
@@ -76,15 +106,29 @@ class AdminController extends BaseController
         }
 
         $participantModel = new ParticipantModel();
-        $attendanceModel  = new AttendanceLogModel();
+        $scopedWorkUnit = $this->getScopedWorkUnit();
 
-        $totalParticipants = $participantModel->countAllResults();
-        $hadir = $attendanceModel->where('first_scanned_at IS NOT NULL')->countAllResults();
+        $participantBuilder = $participantModel->builder();
+        if ($scopedWorkUnit !== null) {
+            $participantBuilder->where('work_unit', $scopedWorkUnit);
+        }
+        $totalParticipants = $participantBuilder->countAllResults();
+
+        $attendanceBuilder = db_connect()->table('participants p')
+            ->join('attendance_logs a', 'a.participant_id = p.id', 'inner')
+            ->where('a.first_scanned_at IS NOT NULL');
+        if ($scopedWorkUnit !== null) {
+            $attendanceBuilder->where('p.work_unit', $scopedWorkUnit);
+        }
+        $hadir = $attendanceBuilder->countAllResults();
 
         return view('admin/dashboard', [
             'totalParticipants' => $totalParticipants,
             'hadir'             => $hadir,
             'tidakHadir'        => max($totalParticipants - $hadir, 0),
+            'isSuperAdmin'      => $this->isSuperAdmin(),
+            'adminRole'         => (string) session()->get('admin_role'),
+            'adminWorkUnit'     => (string) session()->get('admin_work_unit'),
         ]);
     }
 
@@ -101,13 +145,21 @@ class AdminController extends BaseController
             $result = $this->processScan($barcode);
         }
 
-        return view('admin/scan', ['result' => $result]);
+        return view('admin/scan', [
+            'result' => $result,
+            'isSuperAdmin' => $this->isSuperAdmin(),
+            'adminWorkUnit' => (string) session()->get('admin_work_unit'),
+        ]);
     }
 
     public function import()
     {
         if ($redirect = $this->requireAdminLogin()) {
             return $redirect;
+        }
+
+        if (! $this->isSuperAdmin()) {
+            return redirect()->to(base_url('admin/dashboard'))->with('error', 'Fitur import hanya untuk Super Admin.');
         }
 
         if ($this->request->getMethod() === 'post') {
@@ -152,6 +204,10 @@ class AdminController extends BaseController
         $participantModel = new ParticipantModel();
 
         $workUnit = (string) $this->request->getGet('work_unit');
+        $scopedWorkUnit = $this->getScopedWorkUnit();
+        if ($scopedWorkUnit !== null) {
+            $workUnit = $scopedWorkUnit;
+        }
         $position = (string) $this->request->getGet('position');
         $status   = (string) $this->request->getGet('status');
 
@@ -182,6 +238,8 @@ class AdminController extends BaseController
                 'hadir'       => $hadir,
                 'tidak_hadir' => count($rows) - $hadir,
             ],
+            'isSuperAdmin'  => $this->isSuperAdmin(),
+            'adminWorkUnit' => (string) session()->get('admin_work_unit'),
         ]);
     }
 
@@ -255,6 +313,49 @@ class AdminController extends BaseController
             ->setBody("\xEF\xBB\xBF" . $csv);
     }
 
+    public function loginLogs()
+    {
+        if ($redirect = $this->requireAdminLogin()) {
+            return $redirect;
+        }
+        if ($redirect = $this->requireSuperAdmin()) {
+            return $redirect;
+        }
+
+        $rows = db_connect()->table('admin_login_logs l')
+            ->select('l.*, a.username, a.work_unit')
+            ->join('admins a', 'a.id = l.admin_id', 'left')
+            ->where('l.admin_role', 'admin_unit')
+            ->orderBy('l.login_at', 'DESC')
+            ->limit(500)
+            ->get()
+            ->getResultArray();
+
+        return view('admin/logins', ['rows' => $rows]);
+    }
+
+    public function scanLogs()
+    {
+        if ($redirect = $this->requireAdminLogin()) {
+            return $redirect;
+        }
+        if ($redirect = $this->requireSuperAdmin()) {
+            return $redirect;
+        }
+
+        $rows = db_connect()->table('attendance_scan_events s')
+            ->select('s.*, a.username, a.work_unit, p.participant_number, p.full_name')
+            ->join('admins a', 'a.id = s.admin_id', 'left')
+            ->join('participants p', 'p.id = s.participant_id', 'left')
+            ->where('a.role', 'admin_unit')
+            ->orderBy('s.scanned_at', 'DESC')
+            ->limit(1000)
+            ->get()
+            ->getResultArray();
+
+        return view('admin/scan_logs', ['rows' => $rows]);
+    }
+
     private function processScan(string $barcodeValue): array
     {
         $scanEventModel  = new AttendanceScanEventModel();
@@ -280,15 +381,15 @@ class AdminController extends BaseController
             ];
         }
 
-        $crypto = new BarcodeCrypto();
-        $participantNumber = $crypto->decryptPayload($barcodeValue);
-
-        if ($participantNumber === null) {
-            // fallback manual number for emergency/manual input
-            $participantNumber = $barcodeValue;
+        $participant = null;
+        if (preg_match('/^[a-f0-9]{32}$/i', $barcodeValue)) {
+            $participant = $participantModel->findByBarcodeMd5($barcodeValue);
         }
 
-        $participant = $participantModel->findByParticipantNumber($participantNumber);
+        // fallback manual number for emergency/manual input
+        if (! $participant) {
+            $participant = $participantModel->findByParticipantNumber($barcodeValue);
+        }
 
         if (! $participant) {
             $scanEventModel->insert([
@@ -304,6 +405,24 @@ class AdminController extends BaseController
                 'type'    => 'error',
                 'title'   => 'Peserta tidak ditemukan',
                 'message' => 'Kode barcode tidak valid atau peserta tidak ada di master data.',
+            ];
+        }
+
+        $scopedWorkUnit = $this->getScopedWorkUnit();
+        if ($scopedWorkUnit !== null && (string) ($participant['work_unit'] ?? '') !== $scopedWorkUnit) {
+            $scanEventModel->insert([
+                'participant_id' => $participant['id'],
+                'admin_id'       => $adminId,
+                'barcode_value'  => $barcodeValue,
+                'status'         => 'forbidden',
+                'message'        => 'Peserta berada di unit kerja lain.',
+                'scanned_at'     => $now,
+            ]);
+
+            return [
+                'type'    => 'error',
+                'title'   => 'Akses ditolak',
+                'message' => 'Admin unit kerja hanya dapat scan peserta dari unit kerjanya sendiri.',
             ];
         }
 
@@ -519,6 +638,10 @@ class AdminController extends BaseController
         $participantModel = new ParticipantModel();
 
         $workUnit = (string) $this->request->getGet('work_unit');
+        $scopedWorkUnit = $this->getScopedWorkUnit();
+        if ($scopedWorkUnit !== null) {
+            $workUnit = $scopedWorkUnit;
+        }
         $position = (string) $this->request->getGet('position');
         $status   = (string) $this->request->getGet('status');
         if ($status === '') {
@@ -553,6 +676,22 @@ class AdminController extends BaseController
                 'tidak_hadir' => count($rows) - $hadir,
             ],
             'logoBase64' => $logoBase64,
+            'isSuperAdmin' => $this->isSuperAdmin(),
+            'adminWorkUnit' => (string) session()->get('admin_work_unit'),
         ];
+    }
+
+    private function writeAdminUnitLoginLog(int $adminId, string $status, string $message): void
+    {
+        $logModel = new AdminLoginLogModel();
+        $logModel->insert([
+            'admin_id'    => $adminId,
+            'admin_role'  => 'admin_unit',
+            'ip_address'  => (string) $this->request->getIPAddress(),
+            'user_agent'  => substr((string) $this->request->getUserAgent(), 0, 255),
+            'status'      => $status,
+            'message'     => $message,
+            'login_at'    => date('Y-m-d H:i:s'),
+        ]);
     }
 }

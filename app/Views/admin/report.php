@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Kehadiran SKTT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url('adm-template/plugins/datatables/DataTables-1.10.20/css/jquery.dataTables.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('css/sktt-brand.css') ?>" rel="stylesheet">
 </head>
 <body class="kh-theme">
@@ -23,17 +24,26 @@
 </nav>
 
 <div class="container py-4">
+    <?php if (! $isSuperAdmin): ?>
+        <div class="alert alert-info">Mode Admin Unit Kerja aktif. Laporan dibatasi untuk unit kerja: <strong><?= esc($adminWorkUnit ?: '-') ?></strong>.</div>
+    <?php endif; ?>
+
     <div class="card kh-card mb-3">
         <div class="card-body">
             <form method="get" action="<?= base_url('admin/report') ?>" class="row g-3">
                 <div class="col-md-3">
                     <label class="form-label">Unit Kerja</label>
-                    <select class="form-select" name="work_unit">
-                        <option value="">Semua</option>
-                        <?php foreach ($workUnits as $item): ?>
-                            <option value="<?= esc($item['work_unit']) ?>" <?= $filters['work_unit'] === $item['work_unit'] ? 'selected' : '' ?>><?= esc($item['work_unit']) ?></option>
-                        <?php endforeach; ?>
-                    </select>
+                    <?php if ($isSuperAdmin): ?>
+                        <select class="form-select" name="work_unit">
+                            <option value="">Semua</option>
+                            <?php foreach ($workUnits as $item): ?>
+                                <option value="<?= esc($item['work_unit']) ?>" <?= $filters['work_unit'] === $item['work_unit'] ? 'selected' : '' ?>><?= esc($item['work_unit']) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    <?php else: ?>
+                        <input type="text" class="form-control" value="<?= esc($adminWorkUnit ?: '-') ?>" readonly>
+                        <input type="hidden" name="work_unit" value="<?= esc($adminWorkUnit) ?>">
+                    <?php endif; ?>
                 </div>
                 <div class="col-md-3">
                     <label class="form-label">Jabatan</label>
@@ -69,7 +79,7 @@
 
     <div class="card kh-card">
         <div class="card-body table-responsive">
-            <table class="table table-striped table-bordered align-middle">
+            <table id="reportTable" class="table table-striped table-bordered align-middle">
                 <thead>
                 <tr>
                     <th>No</th>
@@ -106,5 +116,33 @@
         </div>
     </div>
 </div>
+
+<script src="<?= base_url('js/jquery.min.js') ?>"></script>
+<script src="<?= base_url('adm-template/plugins/datatables/DataTables-1.10.20/js/jquery.dataTables.min.js') ?>"></script>
+<script>
+$(function () {
+    $('#reportTable').DataTable({
+        pageLength: 25,
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'Semua']],
+        order: [[1, 'asc']],
+        columnDefs: [
+            { orderable: false, targets: [0] }
+        ],
+        language: {
+            search: 'Cari:',
+            lengthMenu: 'Tampilkan _MENU_ data',
+            info: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ data',
+            infoEmpty: 'Tidak ada data',
+            zeroRecords: 'Data tidak ditemukan',
+            paginate: {
+                first: 'Awal',
+                last: 'Akhir',
+                next: 'Berikut',
+                previous: 'Sebelumnya'
+            }
+        }
+    });
+});
+</script>
 </body>
 </html>

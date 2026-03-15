@@ -20,4 +20,6 @@ $routes->group('admin', static function ($routes) {
     $routes->get('report', 'AdminController::report');
     $routes->get('report/pdf', 'AdminController::reportPdf');
     $routes->get('report/csv', 'AdminController::reportCsv');
+    $routes->get('logs/login', 'AdminController::loginLogs');
+    $routes->get('logs/scan', 'AdminController::scanLogs');
 });

@@ -14,7 +14,6 @@
             <img class="kh-logo" src="<?= base_url('images/kemenham_icon.png') ?>" alt="Logo KemenHAM">
             <div class="kh-brand-title">SKTT PPPK KemenHAM</div>
         </div>
-        <a class="btn btn-outline-light btn-sm" href="<?= base_url('admin/login') ?>">Admin</a>
     </div>
 </nav>
 
@@ -59,6 +58,15 @@
                         <div class="mb-4">
                             <label for="birth_date" class="form-label">Tanggal Lahir</label>
                             <input type="date" class="form-control" id="birth_date" name="birth_date" required value="<?= esc(old('birth_date')) ?>">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="captcha" class="form-label">Captcha (5 karakter)</label>
+                            <div class="mb-2">
+                                <img src="<?= $captchaImage ?>" alt="Captcha" style="border:1px solid #c9d7ed; border-radius:8px;">
+                            </div>
+                            <input type="text" class="form-control" id="captcha" name="captcha" required maxlength="5" autocomplete="off" value="">
+                            <small class="text-muted">Jika captcha sulit dibaca, muat ulang halaman untuk captcha baru.</small>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100">Generate Kartu Ujian (PDF)</button>

@@ -38,6 +38,11 @@ class ParticipantModel extends Model
         return $this->where('participant_number', trim($participantNumber))->first();
     }
 
+    public function findByBarcodeMd5(string $barcodeHash): ?array
+    {
+        return $this->where('MD5(participant_number)', strtolower(trim($barcodeHash)))->first();
+    }
+
     public function getReportRows(?string $workUnit = null, ?string $position = null, string $status = 'all'): array
     {
         $builder = $this->db->table($this->table . ' p')

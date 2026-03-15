@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(100) NOT NULL,
   `password_hash` VARCHAR(255) NOT NULL,
+  `role` VARCHAR(20) NOT NULL DEFAULT 'admin_unit',
   `work_unit` VARCHAR(255) NULL,
   `created_at` DATETIME NULL,
   `updated_at` DATETIME NULL,
@@ -53,8 +54,22 @@ CREATE TABLE IF NOT EXISTS `attendance_scan_events` (
   KEY `scan_events_idx_status` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `admins` (`username`, `password_hash`, `work_unit`, `created_at`, `updated_at`)
-SELECT 'admin', '\$2y\$10\$gaw1at3w.08RXNGXgD8rwO1p8/i7G2rrQi8/jQANXXI6QRec7vkQ6', NULL, NOW(), NOW()
+CREATE TABLE IF NOT EXISTS `admin_login_logs` (
+  `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `admin_id` INT UNSIGNED NOT NULL,
+  `admin_role` VARCHAR(20) NOT NULL,
+  `ip_address` VARCHAR(45) NULL,
+  `user_agent` VARCHAR(255) NULL,
+  `status` VARCHAR(20) NOT NULL,
+  `message` TEXT NULL,
+  `login_at` DATETIME NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `admin_login_logs_idx_admin` (`admin_id`),
+  KEY `admin_login_logs_idx_time` (`login_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `admins` (`username`, `password_hash`, `role`, `work_unit`, `created_at`, `updated_at`)
+SELECT 'admin', '\$2y\$10\$gaw1at3w.08RXNGXgD8rwO1p8/i7G2rrQi8/jQANXXI6QRec7vkQ6', 'super_admin', NULL, NOW(), NOW()
 WHERE NOT EXISTS (
   SELECT 1 FROM `admins` WHERE `username` = 'admin'
 );

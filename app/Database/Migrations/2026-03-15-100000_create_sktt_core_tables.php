@@ -74,6 +74,11 @@ class CreateSkttCoreTables extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => 255,
             ],
+            'role' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 20,
+                'default'    => 'admin_unit',
+            ],
             'work_unit' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255,
@@ -182,11 +187,55 @@ class CreateSkttCoreTables extends Migration
         $this->forge->addKey('status', false, false, 'scan_events_idx_status');
         $this->forge->createTable('attendance_scan_events', true);
 
+        $this->forge->addField([
+            'id' => [
+                'type'           => 'BIGINT',
+                'constraint'     => 20,
+                'unsigned'       => true,
+                'auto_increment' => true,
+            ],
+            'admin_id' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'unsigned'   => true,
+            ],
+            'admin_role' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 20,
+            ],
+            'ip_address' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 45,
+                'null'       => true,
+            ],
+            'user_agent' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+                'null'       => true,
+            ],
+            'status' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 20,
+            ],
+            'message' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'login_at' => [
+                'type' => 'DATETIME',
+            ],
+        ]);
+        $this->forge->addKey('id', true);
+        $this->forge->addKey('admin_id', false, false, 'admin_login_logs_idx_admin');
+        $this->forge->addKey('login_at', false, false, 'admin_login_logs_idx_time');
+        $this->forge->createTable('admin_login_logs', true);
+
         $adminExists = $this->db->table('admins')->where('username', 'admin')->countAllResults();
         if ($adminExists === 0) {
             $this->db->table('admins')->insert([
                 'username'      => 'admin',
                 'password_hash' => password_hash('Admin123!', PASSWORD_DEFAULT),
+                'role'          => 'super_admin',
                 'work_unit'     => null,
                 'created_at'    => date('Y-m-d H:i:s'),
                 'updated_at'    => date('Y-m-d H:i:s'),
@@ -196,6 +245,7 @@ class CreateSkttCoreTables extends Migration
 
     public function down()
     {
+        $this->forge->dropTable('admin_login_logs', true);
         $this->forge->dropTable('attendance_scan_events', true);
         $this->forge->dropTable('attendance_logs', true);
         $this->forge->dropTable('admins', true);
