@@ -106,8 +106,8 @@
 
     $sesiJamGabung = '-';
     if ($sesiValue !== '' || $jamValue !== '' || $zonaValue !== '') {
-        $left = trim($sesiValue);
-        $right = trim($jamValue . ($zonaValue !== '' ? ' ' . $zonaValue : ''));
+        $left = 'Sesi ' . trim($sesiValue);
+        $right = 'Pukul ' . trim($jamValue . ($zonaValue !== '' ? ' ' . $zonaValue : ''));
         $sesiJamGabung = trim($left . ($left !== '' && $right !== '' ? ' / ' : '') . $right);
     }
 
@@ -145,7 +145,6 @@
                     <tr><td>Pendidikan</td><td><?= esc($pendidikanValue) ?></td></tr>
                     <tr><td>Jabatan</td><td><?= esc($participant['position']) ?></td></tr>
                     <tr><td>Formasi</td><td><?= esc($formasiValue) ?></td></tr>
-                    <tr><td>Unit Kerja</td><td><?= esc($participant['work_unit'] ?: '-') ?></td></tr>
                     <tr><td>Unit Kerja Penyelenggara</td><td><?= esc($unitKerjaPenyelenggaraValue) ?></td></tr>
                     <tr><td>Lokasi Ujian</td><td><?= esc($lokasiUjianValue) ?></td></tr>
                     <tr><td>Alamat</td><td><?= esc($alamatValue) ?></td></tr>

@@ -89,7 +89,7 @@ class RegistController extends BaseController
 
         return $this->response
             ->setContentType('application/pdf')
-            ->setHeader('Content-Disposition', 'inline; filename="kartu_ujian_' . $safeNumber . '.pdf"')
+            ->setHeader('Content-Disposition', 'attachment; filename="kartu_ujian_' . $safeNumber . '.pdf"')
             ->setBody($dompdf->output());
     }
 
