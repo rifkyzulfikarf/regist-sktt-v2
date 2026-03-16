@@ -1,0 +1,10 @@
+.git
+.gitignore
+.dockerignore
+docker-compose.yml
+Dockerfile
+*.md
+writable/logs/*
+writable/cache/*
+writable/session/*
+writable/debugbar/*
