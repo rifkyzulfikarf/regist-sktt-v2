@@ -23,7 +23,8 @@ RUN apt-get update && apt-get install -y \
         opcache \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers \
+    && echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' \
@@ -45,6 +46,9 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 COPY . .
 
-RUN chown -R www-data:www-data /var/www/html/writable
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 80
+
+ENTRYPOINT ["docker-entrypoint.sh"]

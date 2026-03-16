@@ -1,5 +1,5 @@
 services:
-  app:
+  regist-sktt:
     build:
       context: .
       dockerfile: Dockerfile
@@ -16,8 +16,7 @@ services:
         condition: service_healthy
     restart: unless-stopped
     networks:
-      - sktt-network
-      - jdih-network
+      - jdih_app_jdih-network
 
   mysql:
     image: mysql:8.3
@@ -38,13 +37,11 @@ services:
       start_period: 30s
     restart: unless-stopped
     networks:
-      - sktt-network
+      - jdih_app_jdih-network
 
 volumes:
   mysql-data:
 
 networks:
-  sktt-network:
-    driver: bridge
-  jdih-network:
+  jdih_app_jdih-network:
     external: true
