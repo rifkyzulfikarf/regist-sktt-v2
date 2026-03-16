@@ -19,5 +19,8 @@ writable/cache/*
 writable/session/*
 !writable/session/index.html
 
+# Environment (contains secrets)
+.env
+
 # Build artifacts
 *.zip
