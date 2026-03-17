@@ -37,6 +37,9 @@ RUN echo '<Directory /var/www/html/public>\n\
 </Directory>' > /etc/apache2/conf-available/ci4.conf \
     && a2enconf ci4
 
+RUN a2enmod rewrite
+RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
