@@ -172,6 +172,7 @@
                     <ol>
                         <li>Kartu ini wajib dibawa saat pelaksanaan Seleksi Kompetensi Tambahan (Tes Tertulis).</li>
                         <li>Peserta wajib menunjukkan kartu dan identitas resmi saat registrasi kehadiran.</li>
+                        <li>Peserta hadir paling lambat 60 (enam puluh) menit sebelum sesi dimulai.</li>
                         <li>Cetak Kartu Peserta dengan kualitas tinggi karena barcode pada Kartu Ujian digunakan untuk scan kehadiran oleh panitia.</li>
                     </ol>
                 </div>
