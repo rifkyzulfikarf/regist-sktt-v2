@@ -122,6 +122,15 @@ class AdminController extends BaseController
         }
         $hadir = $attendanceBuilder->countAllResults();
 
+        $organizerSummary = [];
+        if ($this->isSuperAdmin()) {
+            $participantRows = db_connect()->table('participants')
+                ->select('work_unit, raw_data')
+                ->get()
+                ->getResultArray();
+            $organizerSummary = $this->buildOrganizerSummary($participantRows);
+        }
+
         return view('admin/dashboard', [
             'totalParticipants' => $totalParticipants,
             'hadir'             => $hadir,
@@ -129,6 +138,7 @@ class AdminController extends BaseController
             'isSuperAdmin'      => $this->isSuperAdmin(),
             'adminRole'         => (string) session()->get('admin_role'),
             'adminWorkUnit'     => (string) session()->get('admin_work_unit'),
+            'organizerSummary'  => $organizerSummary,
         ]);
     }
 
@@ -693,5 +703,105 @@ class AdminController extends BaseController
             'message'     => $message,
             'login_at'    => date('Y-m-d H:i:s'),
         ]);
+    }
+
+    private function buildOrganizerSummary(array $participantRows): array
+    {
+        $summary = [];
+
+        foreach ($participantRows as $row) {
+            $raw = [];
+            if (! empty($row['raw_data'])) {
+                $decoded = json_decode((string) $row['raw_data'], true);
+                if (is_array($decoded)) {
+                    $raw = $decoded;
+                }
+            }
+
+            $organizer = $this->extractRawValue($raw, [
+                'unit kerja penyelenggara',
+                'unit kerja pelaksana',
+                'unit penyelenggara',
+            ]);
+            if ($organizer === null || $organizer === '') {
+                $organizer = trim((string) ($row['work_unit'] ?? ''));
+            }
+            if ($organizer === '') {
+                $organizer = 'Belum terisi';
+            }
+
+            $location = $this->extractRawValue($raw, [
+                'lokasi ujian',
+                'lokasi seleksi',
+                'lokasi',
+                'tilok sktt',
+                'tilok',
+            ]) ?? '-';
+
+            $address = $this->extractRawValue($raw, [
+                'alamat',
+                'alamat lokasi ujian',
+                'alamat seleksi',
+                'alamat lokasi',
+            ]) ?? '-';
+
+            $session = $this->extractRawValue($raw, ['sesi', 'sesi ujian']) ?? '';
+            $time = $this->extractRawValue($raw, ['jam', 'jam ujian', 'waktu', 'zona waktu', 'timezone']) ?? '';
+
+            $sessionLabel = trim($session . ($session !== '' && $time !== '' ? ' / ' : '') . $time);
+            if ($sessionLabel === '') {
+                $sessionLabel = 'Belum terisi';
+            }
+
+            if (! isset($summary[$organizer])) {
+                $summary[$organizer] = [
+                    'organizer' => $organizer,
+                    'location'  => $location,
+                    'address'   => $address,
+                    'total'     => 0,
+                    'sessions'  => [],
+                ];
+            } else {
+                if ($summary[$organizer]['location'] === '-' && $location !== '-') {
+                    $summary[$organizer]['location'] = $location;
+                }
+                if ($summary[$organizer]['address'] === '-' && $address !== '-') {
+                    $summary[$organizer]['address'] = $address;
+                }
+            }
+
+            if (! isset($summary[$organizer]['sessions'][$sessionLabel])) {
+                $summary[$organizer]['sessions'][$sessionLabel] = 0;
+            }
+
+            $summary[$organizer]['sessions'][$sessionLabel]++;
+            $summary[$organizer]['total']++;
+        }
+
+        ksort($summary);
+        foreach ($summary as &$item) {
+            ksort($item['sessions']);
+        }
+        unset($item);
+
+        return array_values($summary);
+    }
+
+    private function extractRawValue(array $raw, array $keywords): ?string
+    {
+        foreach ($raw as $key => $value) {
+            $k = $this->normalizeHeader((string) $key);
+            foreach ($keywords as $keyword) {
+                $nKeyword = $this->normalizeHeader($keyword);
+                if ($k === $nKeyword || str_contains($k, $nKeyword)) {
+                    $v = trim((string) $value);
+                    if ($v !== '') {
+                        return $v;
+                    }
+                }
+            }
+        }
+
+        return null;
     }
 }
