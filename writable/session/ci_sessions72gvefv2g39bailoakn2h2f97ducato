@@ -1,9 +1,0 @@
-__ci_last_regenerate|i:1763547860;_ci_previous_url|s:46:"http://localhost/drawing-ham/public/index.php/";info|b:1;__ci_vars|a:3:{s:4:"info";s:3:"old";s:9:"info_type";s:3:"old";s:10:"info_pesan";s:3:"old";}info_type|s:13:"alert-warning";info_pesan|s:251:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
-	<div class="errors" role="alert">
-		<ul>
-					<li>foto does not have a valid mime type.</li>
-				</ul>
-	</div>
-
-<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
-";
