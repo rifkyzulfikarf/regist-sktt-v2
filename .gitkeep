@@ -1,0 +1,5 @@
+touch writable/.gitkeep
+touch writable/logs/.gitkeep
+touch writable/cache/.gitkeep
+touch writable/session/.gitkeep
+touch writable/uploads/.gitkeep

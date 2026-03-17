@@ -46,6 +46,10 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 COPY . .
 
+RUN mkdir -p writable/cache writable/logs writable/session writable/uploads writable/debugbar \
+    && chown -R www-data:www-data writable \
+    && chmod -R 775 writable
+
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
