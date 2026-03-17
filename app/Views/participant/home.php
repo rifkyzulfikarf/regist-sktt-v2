@@ -6,6 +6,7 @@
     <title>Unduh Kartu Ujian SKTT PPPK KemenHAM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url('css/sktt-brand.css') ?>" rel="stylesheet">
+    <link rel="icon" href="<?=base_url()?>images/kemenham_icon.png">
 </head>
 <body class="kh-theme">
 <nav class="navbar navbar-expand-lg kh-navbar">
