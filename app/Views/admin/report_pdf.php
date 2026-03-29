@@ -39,6 +39,8 @@
             <th>Nama</th>
             <th>Jabatan</th>
             <th>Unit Kerja</th>
+            <th>Lokasi Seleksi</th>
+            <th>Sesi / Jam</th>
             <th>Tgl Lahir</th>
             <th>Status</th>
             <th>Waktu Registrasi Pertama</th>
@@ -47,7 +49,7 @@
         </thead>
         <tbody>
         <?php if (empty($rows)): ?>
-            <tr><td colspan="9" style="text-align:center;">Tidak ada data</td></tr>
+            <tr><td colspan="11" style="text-align:center;">Tidak ada data</td></tr>
         <?php else: ?>
             <?php foreach ($rows as $index => $row): ?>
                 <tr>
@@ -56,6 +58,8 @@
                     <td><?= esc($row['full_name'] ?: '-') ?></td>
                     <td><?= esc($row['position']) ?></td>
                     <td><?= esc($row['work_unit'] ?: '-') ?></td>
+                    <td><?= esc($row['location_label'] ?? '-') ?></td>
+                    <td><?= esc($row['session_label'] ?? '-') ?></td>
                     <td><?= esc($row['birth_date']) ?></td>
                     <td><?= !empty($row['first_scanned_at']) ? 'Hadir' : 'Tidak Hadir' ?></td>
                     <td><?= esc($row['first_scanned_at'] ?: '-') ?></td>

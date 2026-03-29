@@ -42,7 +42,6 @@
                         </div>
                         <button class="btn btn-primary w-100" type="submit">Masuk</button>
                     </form>
-                    <small class="text-muted d-block mt-3">Default awal: admin / Admin123! (segera ganti di database).</small>
                 </div>
             </div>
         </div>

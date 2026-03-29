@@ -213,19 +213,30 @@ class AdminController extends BaseController
 
         $participantModel = new ParticipantModel();
 
-        $workUnit = (string) $this->request->getGet('work_unit');
+        $workUnit = trim((string) $this->request->getGet('work_unit'));
         $scopedWorkUnit = $this->getScopedWorkUnit();
         if ($scopedWorkUnit !== null) {
             $workUnit = $scopedWorkUnit;
         }
-        $position = (string) $this->request->getGet('position');
-        $status   = (string) $this->request->getGet('status');
+        $position = trim((string) $this->request->getGet('position'));
+        $status   = trim((string) $this->request->getGet('status'));
+        $sessionFilter = trim((string) $this->request->getGet('session_label'));
 
         if ($status === '') {
             $status = 'all';
         }
 
-        $rows = $participantModel->getReportRows($workUnit, $position, $status);
+        // Data untuk opsi sesi: untuk super admin gunakan semua unit kerja (sesuai filter jabatan/status),
+        // untuk admin unit kerja tetap terbatas ke unit kerja miliknya.
+        $optionsWorkUnitScope = $scopedWorkUnit;
+        $optionRows = $participantModel->getReportRows($optionsWorkUnitScope, $position, $status);
+        $optionRows = $this->enrichRowsWithLocationAndSession($optionRows);
+        $workUnitSessionOptions = $this->buildWorkUnitSessionOptions($optionRows);
+
+        // Data utama tabel mengikuti filter unit kerja yang dipilih.
+        $baseRows = $participantModel->getReportRows($workUnit, $position, $status);
+        $baseRows = $this->enrichRowsWithLocationAndSession($baseRows);
+        $rows = $this->filterRowsBySession($baseRows, $sessionFilter);
 
         $hadir = 0;
         foreach ($rows as $row) {
@@ -240,9 +251,11 @@ class AdminController extends BaseController
                 'work_unit' => $workUnit,
                 'position'  => $position,
                 'status'    => $status,
+                'session_label' => $sessionFilter,
             ],
             'workUnits'  => $participantModel->getDistinctWorkUnits(),
             'positions'  => $participantModel->getDistinctPositions(),
+            'workUnitSessionOptions' => $workUnitSessionOptions,
             'summary'    => [
                 'total'       => count($rows),
                 'hadir'       => $hadir,
@@ -291,6 +304,8 @@ class AdminController extends BaseController
             'Nama',
             'Jabatan',
             'Unit Kerja',
+            'Lokasi Seleksi',
+            'Sesi / Jam',
             'Tanggal Lahir',
             'Status Kehadiran',
             'Waktu Registrasi Pertama',
@@ -306,6 +321,8 @@ class AdminController extends BaseController
                 $row['full_name'] ?? '-',
                 $row['position'] ?? '-',
                 $row['work_unit'] ?? '-',
+                $row['location_label'] ?? '-',
+                $row['session_label'] ?? '-',
                 $row['birth_date'] ?? '-',
                 ! empty($row['first_scanned_at']) ? 'Hadir' : 'Tidak Hadir',
                 $row['first_scanned_at'] ?? '-',
@@ -654,11 +671,14 @@ class AdminController extends BaseController
         }
         $position = (string) $this->request->getGet('position');
         $status   = (string) $this->request->getGet('status');
+        $sessionFilter = trim((string) $this->request->getGet('session_label'));
         if ($status === '') {
             $status = 'all';
         }
 
-        $rows = $participantModel->getReportRows($workUnit, $position, $status);
+        $baseRows = $participantModel->getReportRows($workUnit, $position, $status);
+        $baseRows = $this->enrichRowsWithLocationAndSession($baseRows);
+        $rows = $this->filterRowsBySession($baseRows, $sessionFilter);
 
         $hadir = 0;
         foreach ($rows as $row) {
@@ -679,6 +699,7 @@ class AdminController extends BaseController
                 'work_unit' => $workUnit,
                 'position'  => $position,
                 'status'    => $status,
+                'session_label' => $sessionFilter,
             ],
             'summary' => [
                 'total'       => count($rows),
@@ -689,6 +710,88 @@ class AdminController extends BaseController
             'isSuperAdmin' => $this->isSuperAdmin(),
             'adminWorkUnit' => (string) session()->get('admin_work_unit'),
         ];
+    }
+
+    private function enrichRowsWithLocationAndSession(array $rows): array
+    {
+        foreach ($rows as &$row) {
+            $raw = [];
+            if (! empty($row['raw_data'])) {
+                $decoded = json_decode((string) $row['raw_data'], true);
+                if (is_array($decoded)) {
+                    $raw = $decoded;
+                }
+            }
+
+            $location = $this->extractRawValue($raw, [
+                'lokasi ujian',
+                'lokasi seleksi',
+                'lokasi',
+                'tilok sktt',
+                'tilok',
+            ]);
+            $session = $this->extractRawValue($raw, ['sesi', 'sesi ujian']) ?? '';
+            $time = $this->extractRawValue($raw, ['jam', 'jam ujian', 'waktu']) ?? '';
+            $zone = $this->extractRawValue($raw, ['zona waktu', 'timezone', 'zona']) ?? '';
+
+            $sessionLabel = trim($session);
+            if ($sessionLabel === '' && ($time !== '' || $zone !== '')) {
+                $sessionLabel = trim($time . ($zone !== '' ? ' ' . $zone : ''));
+            }
+
+            $row['location_label'] = $location !== null && $location !== '' ? $location : '-';
+            $row['session_label'] = $sessionLabel !== '' ? $sessionLabel : '-';
+            $row['session_time_label'] = trim($time . ($zone !== '' ? ' ' . $zone : ''));
+        }
+        unset($row);
+
+        return $rows;
+    }
+
+    private function buildWorkUnitSessionOptions(array $rows): array
+    {
+        $options = [];
+
+        foreach ($rows as $row) {
+            $workUnit = trim((string) ($row['work_unit'] ?? '-'));
+            $session = trim((string) ($row['session_label'] ?? '-'));
+
+            if ($workUnit === '') {
+                $workUnit = '-';
+            }
+            if ($session === '') {
+                $session = '-';
+            }
+
+            if (! isset($options[$workUnit])) {
+                $options[$workUnit] = [];
+            }
+
+            if (! in_array($session, $options[$workUnit], true)) {
+                $options[$workUnit][] = $session;
+            }
+        }
+
+        ksort($options);
+        foreach ($options as &$sessions) {
+            sort($sessions);
+        }
+        unset($sessions);
+
+        return $options;
+    }
+
+    private function filterRowsBySession(array $rows, string $sessionFilter): array
+    {
+        return array_values(array_filter($rows, static function (array $row) use ($sessionFilter): bool {
+            $session = (string) ($row['session_label'] ?? '-');
+
+            if ($sessionFilter !== '' && $session !== $sessionFilter) {
+                return false;
+            }
+
+            return true;
+        }));
     }
 
     private function writeAdminUnitLoginLog(int $adminId, string $status, string $message): void

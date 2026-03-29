@@ -31,13 +31,14 @@
     <div class="card kh-card mb-3">
         <div class="card-body">
             <form method="get" action="<?= base_url('admin/report') ?>" class="row g-3">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <label class="form-label">Unit Kerja</label>
                     <?php if ($isSuperAdmin): ?>
                         <select class="form-select" name="work_unit">
                             <option value="">Semua</option>
                             <?php foreach ($workUnits as $item): ?>
-                                <option value="<?= esc($item['work_unit']) ?>" <?= $filters['work_unit'] === $item['work_unit'] ? 'selected' : '' ?>><?= esc($item['work_unit']) ?></option>
+                                <?php $wu = trim((string) $item['work_unit']); ?>
+                                <option value="<?= esc($wu) ?>" <?= trim((string) $filters['work_unit']) === $wu ? 'selected' : '' ?>><?= esc($wu) ?></option>
                             <?php endforeach; ?>
                         </select>
                     <?php else: ?>
@@ -45,7 +46,7 @@
                         <input type="hidden" name="work_unit" value="<?= esc($adminWorkUnit) ?>">
                     <?php endif; ?>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <label class="form-label">Jabatan</label>
                     <select class="form-select" name="position">
                         <option value="">Semua</option>
@@ -54,7 +55,7 @@
                         <?php endforeach; ?>
                     </select>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label class="form-label">Status</label>
                     <select class="form-select" name="status">
                         <option value="all" <?= $filters['status'] === 'all' ? 'selected' : '' ?>>Semua</option>
@@ -62,10 +63,30 @@
                         <option value="tidak_hadir" <?= $filters['status'] === 'tidak_hadir' ? 'selected' : '' ?>>Tidak Hadir</option>
                     </select>
                 </div>
-                <div class="col-md-4 d-flex align-items-end gap-2">
-                    <button class="btn btn-primary" type="submit">Terapkan Filter</button>
-                    <a class="btn btn-success" href="<?= base_url('admin/report/pdf?' . http_build_query($filters)) ?>" target="_blank">Export PDF</a>
-                    <a class="btn btn-outline-success" href="<?= base_url('admin/report/csv?' . http_build_query($filters)) ?>">Export CSV</a>
+                <div class="col-md-3">
+                    <label class="form-label">Sesi / Jam</label>
+                    <select class="form-select" name="session_label" id="sessionFilter">
+                        <option value="">Semua</option>
+                        <?php
+                            $selectedWorkUnit = $filters['work_unit'] ?? '';
+                            $sessionOptions = [];
+                            if ($selectedWorkUnit !== '' && isset($workUnitSessionOptions[$selectedWorkUnit])) {
+                                $sessionOptions = $workUnitSessionOptions[$selectedWorkUnit];
+                            }
+                        ?>
+                        <?php foreach ($sessionOptions as $session): ?>
+                            <option value="<?= esc($session) ?>" <?= ($filters['session_label'] ?? '') === $session ? 'selected' : '' ?>>
+                                <?= esc($session) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex flex-wrap gap-2 pt-1">
+                        <button class="btn btn-primary" type="submit">Terapkan Filter</button>
+                        <a class="btn btn-success" href="<?= base_url('admin/report/pdf?' . http_build_query($filters)) ?>" target="_blank">Export PDF</a>
+                        <a class="btn btn-outline-success" href="<?= base_url('admin/report/csv?' . http_build_query($filters)) ?>">Export CSV</a>
+                    </div>
                 </div>
             </form>
         </div>
@@ -87,6 +108,8 @@
                     <th>Nama</th>
                     <th>Jabatan</th>
                     <th>Unit Kerja</th>
+                    <th>Lokasi Seleksi</th>
+                    <th>Sesi / Jam</th>
                     <th>Tgl Lahir</th>
                     <th>Status</th>
                     <th>Waktu Registrasi Pertama</th>
@@ -95,7 +118,7 @@
                 </thead>
                 <tbody>
                 <?php if (empty($rows)): ?>
-                    <tr><td colspan="9" class="text-center text-muted">Tidak ada data</td></tr>
+                    <tr><td colspan="11" class="text-center text-muted">Tidak ada data</td></tr>
                 <?php else: ?>
                     <?php foreach ($rows as $index => $row): ?>
                         <tr>
@@ -104,6 +127,8 @@
                             <td><?= esc($row['full_name'] ?: '-') ?></td>
                             <td><?= esc($row['position']) ?></td>
                             <td><?= esc($row['work_unit'] ?: '-') ?></td>
+                            <td><?= esc($row['location_label'] ?? '-') ?></td>
+                            <td><?= esc($row['session_label'] ?? '-') ?></td>
                             <td><?= esc($row['birth_date']) ?></td>
                             <td><?= !empty($row['first_scanned_at']) ? '<span class="badge text-bg-success">Hadir</span>' : '<span class="badge text-bg-danger">Tidak Hadir</span>' ?></td>
                             <td><?= esc($row['first_scanned_at'] ?: '-') ?></td>
@@ -121,6 +146,42 @@
 <script src="<?= base_url('adm-template/plugins/datatables/DataTables-1.10.20/js/jquery.dataTables.min.js') ?>"></script>
 <script>
 $(function () {
+    const workUnitSessionOptions = <?= json_encode($workUnitSessionOptions, JSON_UNESCAPED_UNICODE) ?>;
+    const selectedSession = <?= json_encode($filters['session_label'] ?? '', JSON_UNESCAPED_UNICODE) ?>;
+    const $workUnitSelect = $('select[name="work_unit"]');
+    const $workUnitHidden = $('input[type="hidden"][name="work_unit"]');
+    const currentWorkUnitValue = function () {
+        if ($workUnitSelect.length) {
+            return $workUnitSelect.val();
+        }
+        if ($workUnitHidden.length) {
+            return $workUnitHidden.val();
+        }
+        return '';
+    };
+    const $session = $('#sessionFilter');
+
+    function buildSessionOptions(workUnit, keepSelected) {
+        let sessions = [];
+        if (workUnit && workUnitSessionOptions[workUnit]) {
+            sessions = workUnitSessionOptions[workUnit];
+        }
+
+        $session.empty().append('<option value="">Semua</option>');
+        sessions.forEach(function (s) {
+            const selectedAttr = keepSelected && s === selectedSession ? ' selected' : '';
+            $session.append('<option value=\"' + $('<div>').text(s).html() + '\"' + selectedAttr + '>' + $('<div>').text(s).html() + '</option>');
+        });
+    }
+
+    if ($workUnitSelect.length) {
+        $workUnitSelect.on('change', function () {
+            buildSessionOptions($(this).val(), false);
+        });
+    }
+
+    buildSessionOptions(currentWorkUnitValue(), true);
+
     $('#reportTable').DataTable({
         pageLength: 25,
         lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'Semua']],
