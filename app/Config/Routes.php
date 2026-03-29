@@ -7,6 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'RegistController::index');
 $routes->post('card/generate', 'RegistController::generateCard');
+$routes->get('dashboard-kehadiran', 'PublicDashboardController::index');
+$routes->get('dashboard-kehadiran/detail', 'PublicDashboardController::detail');
 
 $routes->group('admin', static function ($routes) {
     $routes->match(['get', 'post'], 'login', 'AdminController::login');
